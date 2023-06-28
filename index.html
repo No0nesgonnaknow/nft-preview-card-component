@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | NFT preview card component</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      color: hsl(215, 32%, 27%);
+      background-color: hsl(217, 54%, 11%);
+      margin: 0;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Add flex direction to align items vertically */
+    }
+    
+    h1, p {
+      margin-top: 0;
+    }
+    
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 1rem;
+      color: hsl(228, 45%, 44%);
+    }
+    
+    .attribution a {
+      color: inherit;
+    }
+    
+    .card {
+      background-color: hsl(216, 50%, 16%);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      color: hsl(0, 0%, 100%);
+      width: 300px;
+    }
+    
+    #main-picture {
+      position: relative;
+      width: 100%;
+    }
+
+    #main-picture img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    #img-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 93%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 0.5rem;
+      background-color: hsla(178, 100%, 50%, 0.39); /* Add the specified color */
+    }
+
+    #img-view:hover {
+      opacity: 1;
+    }
+
+    #img-view img {
+      width: 50px;
+      height: 50px;
+    }
+    
+    #card-title {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+    
+    #card-text {
+      margin-bottom: 1rem;
+    }
+    
+    #card-price {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: hsl(178, 100%, 50%);
+    }
+    
+    #card-price i {
+      margin-right: 0.25rem;
+    }
+    
+    #card-timer {
+      margin-bottom: 1rem;
+    }
+    
+    .dets {
+      position: relative; /* Add relative positioning */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .dets::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: hsl(215, 32%, 27%);
+      bottom: -1rem; /* Adjust the position of the line */
+      left: 1rem; /* Add left spacing */
+      right: 1rem; /* Add right spacing */
+    }
+
+    #card-price,
+    #card-timer {
+      display: flex; /* Ensure contents are displayed as flex items */
+      align-items: center; /* Center content vertically within flex container */
+    }
+
+    #card-price {
+      margin-right: 1rem; /* Add some spacing between card-price and card-timer */
+    }
+
+    #card-artist {
+      margin-top: 2rem; /* Add top margin */
+      display: flex; /* Add flex display for positioning */
+      align-items: center; /* Center content vertically */
+    }
+
+    #card-artist img {
+      width: 30px; /* Adjust width as needed */
+      margin-right: 0.5rem; /* Add spacing between the image and text */
+    }
+
+    /* Add hover color to the anchor tags */
+    #card-title:hover,
+    #card-artist span:hover {
+      color: hsl(178, 100%, 50%);
+    }
+
+    /* Set the normal color of the anchor tags to white */
+    #card-title {
+      color: white;
+      text-decoration: none; /* Remove underline */
+    }
+
+    #card-artist span {
+      color: white;
+      text-decoration: none; /* Remove underline */
+      margin: 0; /* Remove default margin */
+    }
+  </style>
+</head>
+  <body>
+    <div class="card">
+        
+        <div id="main-picture">
+          <img src="images/image-equilibrium.jpg" alt="image-equilibrium">
+          <div id="img-view">
+            <img src="images\icon-view.svg" alt="icon view">
+          </div>
+        </div>
+        
+      <h1 id="card-title">Equilibrium #3429</h1>
+
+      <p id="card-text">Our Equilibrium collection promotes balance and calm.</p>
+
+      <div class="dets">
+        <p id="card-price"><i class="fab fa-ethereum"></i> 0.041 ETH</p>
+        <p id="card-timer"><i class="far fa-clock"></i> 3 days left</p>
+      </div>
+
+      <div id="card-artist">
+        <img src="images/image-avatar.png" alt="avatar">
+        <p>Creation of <span>Jules Wyvern</span></p>
+      </div>
+
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Son</a>.
+    </div>
+  </body>
+</html>
